@@ -89,20 +89,22 @@ function checkGameOver(){
 
     }
 
-    let fullfill = 0;
+    else{
+        let fullfill = 0;
 
-    gamegrid.forEach((e)=>{
+        gamegrid.forEach((e)=>{
 
-        if(e !== ""){
-            fullfill++;
+            if(e !== ""){
+                fullfill++;
+            }
+        });
+
+        if(fullfill===9){
+
+            game_info.innerText = "Game is tie!!";
+            game_btn.classList.add("active");
         }
-    });
-
-    if(fullfill===9){
-
-        game_info.innerText = "Game is tie!!";
-        game_btn.classList.add("active");
-    }
+        }
 
 }
 
