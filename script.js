@@ -65,7 +65,7 @@ function checkGameOver(){
     winningPostion.forEach((position) => {
 
         if((gamegrid[position[0]] !== "" || gamegrid[position[1]] !== "" || gamegrid[position[2]] !== "") 
-        && (gamegrid[position[0]] === gamegrid[position[1]] ) && (gamegrid[position[1]] === gamegrid[position[2]])){
+        && (gamegrid[position[0]] === gamegrid[position[1]] ) && (gamegrid[position[1]] === gamegrid[position[2]]) ){
 
             answer = gamegrid[position[0]];
 
@@ -73,7 +73,9 @@ function checkGameOver(){
             grids_box[position[1]].classList.add("win");
             grids_box[position[2]].classList.add("win");
 
+            
         }
+
     })
 
     if(answer !== ""){
@@ -87,8 +89,9 @@ function checkGameOver(){
 
         game_btn.classList.add("active");
 
-    }
+        return;
 
+    }
     else{
         let fullfill = 0;
 
@@ -104,7 +107,7 @@ function checkGameOver(){
             game_info.innerText = "Game is tie!!";
             game_btn.classList.add("active");
         }
-        }
+    }
 
 }
 
